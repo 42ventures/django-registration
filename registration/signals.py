@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.contrib.auth import login, get_backends
 from django.dispatch import Signal
 
@@ -9,7 +10,8 @@ user_registered = Signal(providing_args=["user", "request"])
 user_activated = Signal(providing_args=["user", "request"])
 
 def log_in_user(sender, user, request, **kwargs):
-    backend = get_backends()[0] # A bit of a hack to bypass `authenticate()`.
-    user.backend = "%s.%s" % (backend.__module__, backend.__class__.__name__)
-    login(request, user)
+    if settings.get('REGISTRATION_AUTO_LOGIN', False):
+        backend = get_backends()[0] # A bit of a hack to bypass `authenticate()`.
+        user.backend = "%s.%s" % (backend.__module__, backend.__class__.__name__)
+        login(request, user)
 user_activated.connect(log_in_user)
