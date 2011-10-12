@@ -201,7 +201,7 @@ class RegistrationProfile(models.Model):
         """
         expiration_date = datetime.timedelta(days=settings.ACCOUNT_ACTIVATION_DAYS)
         return self.activation_key == self.ACTIVATED or \
-               (self.user.date_joined + expiration_date <= datetime.datetime.now())
+               (self.user.date_joined.replace(tzinfo=None) + expiration_date <= datetime.datetime.now())
     activation_key_expired.boolean = True
 
     def send_activation_email(self, site):
