@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-registration 0.8 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: \n" 
-"PO-Revision-Date: \n" 
+"POT-Creation-Date: 2011-11-16 14:26+0100\n"
+"PO-Revision-Date: \n"
 "Last-Translator: Rune Bromer <rb@konstellation.dk>\n"
 "Language-Team: \n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -29,12 +30,13 @@ msgid "Username"
 msgstr "Brugernavn"
 
 #: forms.py:36
-msgid "This value must contain only letters, numbers and underscores."
+#, fuzzy
+msgid "This value may contain only letters, numbers and @/./+/-/_ characters."
 msgstr "V¾rdien m kun indeholde bogstaver, tal og underscore."
 
 #: forms.py:39
-msgid "Email address"
-msgstr "E-mailadresse"
+msgid "E-mail"
+msgstr ""
 
 #: forms.py:41
 msgid "Password"
@@ -64,29 +66,31 @@ msgstr "Du skal acceptere betingelserne for at registere"
 msgid ""
 "This email address is already in use. Please supply a different email "
 "address."
-msgstr ""
-"Denne emailadresse er allerede i brug. Benyt venligst en anden. "
+msgstr "Denne emailadresse er allerede i brug. Benyt venligst en anden. "
 
 #: forms.py:122
 msgid ""
 "Registration using free email addresses is prohibited. Please supply a "
 "different email address."
 msgstr ""
-"Registrering med gratis emailadresser er ikke muligt. V¾lg venligst en "
-"anden emailadresse"
+"Registrering med gratis emailadresser er ikke muligt. V¾lg venligst en anden "
+"emailadresse"
 
-#: models.py:165
+#: models.py:168
 msgid "user"
 msgstr "bruger"
 
-#: models.py:166
+#: models.py:169
 msgid "activation key"
 msgstr "Aktiveringsn¿gle"
 
-#: models.py:171
+#: models.py:174
 msgid "registration profile"
 msgstr "Registreringsprofil"
 
-#: models.py:172
+#: models.py:175
 msgid "registration profiles"
 msgstr "Registreringprofiler"
+
+#~ msgid "Email address"
+#~ msgstr "E-mailadresse"

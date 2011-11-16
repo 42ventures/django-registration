@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-registration 0.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-17 11:04+0200\n"
+"POT-Creation-Date: 2011-11-16 14:26+0100\n"
 "PO-Revision-Date: 2010-09-24 23:21+0100\n"
 "Last-Translator: Carles Barrobés i Meix <carles@barrobes.com>\n"
 "Language-Team: Català\n"
@@ -30,7 +30,8 @@ msgid "Username"
 msgstr "Nom d'usuari"
 
 #: forms.py:36
-msgid "This value must contain only letters, numbers and underscores."
+#, fuzzy
+msgid "This value may contain only letters, numbers and @/./+/-/_ characters."
 msgstr "Aquest valor ha de contenir només lletres, números i guions baixos"
 
 #: forms.py:39
