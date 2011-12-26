@@ -57,8 +57,8 @@ class RegistrationFormTests(TestCase):
              'password1': 'secret2',
              'password2': 'secret2'},
             ]
-        for invalid_dict in invalid_data_dicts:
-            form = forms.RegistrationForm(data=invalid_dict)
+        for valid_dict in valid_data_dicts:
+            form = forms.RegistrationForm(data=valid_dict)
             self.failUnless(form.is_valid())
 
     def test_registration_form_tos(self):
