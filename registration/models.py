@@ -141,10 +141,14 @@ class RegistrationManager(models.Manager):
         
         """
         for profile in self.all():
-            if profile.activation_key_expired():
-                user = profile.user
-                if not user.is_active:
-                    user.delete()
+            try:
+                if profile.activation_key_expired():
+                    user = profile.user
+                    if not user.is_active:
+                        user.delete()
+                        profile.delete()
+            except User.DoesNotExist:
+                profile.delete()
 
 
 class RegistrationProfile(models.Model):
@@ -241,10 +245,15 @@ class RegistrationProfile(models.Model):
             not). Consult the documentation for the Django sites
             framework for details regarding these objects' interfaces.
 
+        ``username``
+            The name used to register.
+
         """
         ctx_dict = {'activation_key': self.activation_key,
                     'expiration_days': settings.ACCOUNT_ACTIVATION_DAYS,
-                    'site': site}
+                    'site': site,
+                    'username':self.user,
+                    }
         subject = render_to_string('registration/activation_email_subject.txt',
                                    ctx_dict)
         # Email subject *must not* contain newlines
