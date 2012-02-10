@@ -7,13 +7,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.8.1beta\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-16 14:27+0100\n"
-"PO-Revision-Date: 2009-10-23 15:49+0100\n"
-"Last-Translator: Domen Kožar <domen@dev.si>\n"
+"POT-Creation-Date: 2009-10-12 14:09-0500\n"
+"PO-Revision-Date: 2011-11-05 21:20+0100\n"
+"Last-Translator: Marko Mrdjenovic <m@mmm.si>\n"
 "Language-Team: Slovenian <domen@dev.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Slovenian\n"
 "X-Poedit-Country: SLOVENIA\n"
@@ -24,21 +24,19 @@ msgstr "Aktiviraj uporabnike"
 
 #: admin.py:43
 msgid "Re-send activation emails"
-msgstr "Ponovno pošlju aktivacijske emaile"
+msgstr "Ponovno pošlji aktivacijsko e-pošto"
 
 #: forms.py:35
-#, fuzzy
-msgid "Username"
+msgid "username"
 msgstr "uporabniško ime"
 
 #: forms.py:36
-#, fuzzy
-msgid "This value may contain only letters, numbers and @/./+/-/_ characters."
+msgid "This value must contain only letters, numbers and underscores."
 msgstr "Vrednost lahko vsebuje samo črke, cifre in podčrtaje."
 
 #: forms.py:39
-msgid "E-mail"
-msgstr ""
+msgid "Email address"
+msgstr "E-naslov"
 
 #: forms.py:41
 msgid "Password"
@@ -50,7 +48,7 @@ msgstr "Geslo (ponovno)"
 
 #: forms.py:55
 msgid "A user with that username already exists."
-msgstr "Uporabnik z tem uporabniškim imenom že obstaja."
+msgstr "Uporabnik s tem uporabniškim imenom že obstaja."
 
 #: forms.py:67
 msgid "The two password fields didn't match."
@@ -58,41 +56,33 @@ msgstr "Polji z gesli se ne ujemata."
 
 #: forms.py:78
 msgid "I have read and agree to the Terms of Service"
-msgstr "Strinjam se z pogoji uporable"
+msgstr "Strinjam se s pogoji uporabe"
 
 #: forms.py:79
 msgid "You must agree to the terms to register"
-msgstr "Za registracijo se morate strinjati z pogoji uporabe"
+msgstr "Za registracijo se morate strinjati s pogoji uporabe"
 
 #: forms.py:95
-msgid ""
-"This email address is already in use. Please supply a different email "
-"address."
-msgstr "Email je že v uporabi, prosimo vnesite drugega."
+msgid "This email address is already in use. Please supply a different email address."
+msgstr "E-naslov je že v uporabi, prosimo vnesite drugega."
 
 #: forms.py:122
-msgid ""
-"Registration using free email addresses is prohibited. Please supply a "
-"different email address."
-msgstr ""
-"Registracija ni mogoča z brezplačnimi email naslovi. Prosimo vnesite drug "
-"email naslov."
+msgid "Registration using free email addresses is prohibited. Please supply a different email address."
+msgstr "Registracija ni mogoča z brezplačnimi e-naslovi. Prosimo vnesite drug e-naslov."
 
-#: models.py:168
+#: models.py:165
 msgid "user"
 msgstr "Uporabnik"
 
-#: models.py:169
+#: models.py:166
 msgid "activation key"
 msgstr "Aktivacijski ključ"
 
-#: models.py:174
+#: models.py:171
 msgid "registration profile"
 msgstr "Registracijski profil"
 
-#: models.py:175
+#: models.py:172
 msgid "registration profiles"
 msgstr "Registracijski profili"
 
-#~ msgid "Email address"
-#~ msgstr "Elektronska pošta"
