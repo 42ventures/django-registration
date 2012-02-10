@@ -95,7 +95,7 @@ def activate(request, backend,
 def register(request, backend, success_url=None, form_class=None,
              disallowed_url='registration_disallowed',
              template_name='registration/registration_form.html',
-             extra_context=None):
+             extra_context=None,use_reCaptcha=False):
     """
     Allow a new user to register an account.
 
@@ -161,6 +161,9 @@ def register(request, backend, success_url=None, form_class=None,
         A custom template to use. If not supplied, this will default
         to ``registration/registration_form.html``.
     
+    ``use_reCaptcha``
+        if reCaptcha is used, user's IP needs to be passed to a form 
+
     **Context:**
     
     ``form``
@@ -182,7 +185,10 @@ def register(request, backend, success_url=None, form_class=None,
         form_class = backend.get_form_class(request)
 
     if request.method == 'POST':
-        form = form_class(data=request.POST, files=request.FILES)
+        if use_reCaptcha:
+            form = form_class(data=request.POST, files=request.FILES, initial={'captcha': request.META['REMOTE_ADDR']})
+        else:
+            form = form_class(data=request.POST, files=request.FILES)
         if form.is_valid():
             new_user = backend.register(request, **form.cleaned_data)
             if success_url is None:
@@ -191,7 +197,10 @@ def register(request, backend, success_url=None, form_class=None,
             else:
                 return redirect(success_url)
     else:
-        form = form_class()
+        if use_reCaptcha:
+            form = form_class(initial={'captcha': request.META['REMOTE_ADDR']})
+        else:
+            form = form_class()
     
     if extra_context is None:
         extra_context = {}
