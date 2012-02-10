@@ -46,11 +46,20 @@ class RegistrationFormTests(TestCase):
             self.assertEqual(form.errors[invalid_dict['error'][0]],
                              invalid_dict['error'][1])
 
-        form = forms.RegistrationForm(data={'username': 'foo',
-                                            'email': 'foo@example.com',
-                                            'password1': 'foo',
-                                            'password2': 'foo'})
-        self.failUnless(form.is_valid())
+        valid_data_dicts = [
+            {'username': 'foo',
+             'email': 'foo@example.com',
+             'password1': 'foo',
+             'password2': 'foo'},
+            # users with different cases are allowed
+            {'username': 'Alice',
+             'email': 'Alice@example.com',
+             'password1': 'secret2',
+             'password2': 'secret2'},
+            ]
+        for valid_dict in valid_data_dicts:
+            form = forms.RegistrationForm(data=valid_dict)
+            self.failUnless(form.is_valid())
 
     def test_registration_form_tos(self):
         """
