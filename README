@@ -1,3 +1,8 @@
+NOTE: This is a rollup of most of the pull requests on bitbucket 
+applied to the latest original django-registration:
+
+https://bitbucket.org/ubernostrum/django-registration 
+
 ========================
 Django user registration
 ========================
