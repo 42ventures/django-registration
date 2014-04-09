@@ -17,8 +17,9 @@ up your own URL patterns for these views instead.
 
 """
 
-
-from django.conf.urls.defaults import *
+from django.conf.urls import include
+from django.conf.urls import patterns
+from django.conf.urls import url
 from django.views.generic.simple import direct_to_template
 
 from registration.views import activate
